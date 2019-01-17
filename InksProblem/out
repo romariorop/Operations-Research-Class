@@ -1,0 +1,47 @@
+Found incumbent of value 1875.000000 after 0.00 sec. (0.00 ticks)
+Tried aggregator 1 time.
+Reduced MIP has 6 rows, 8 columns, and 20 nonzeros.
+Reduced MIP has 0 binaries, 8 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.00 sec. (0.01 ticks)
+Tried aggregator 1 time.
+MIP Presolve eliminated 3 rows and 4 columns.
+Reduced MIP has 3 rows, 4 columns, and 10 nonzeros.
+Reduced MIP has 0 binaries, 4 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.00 sec. (0.01 ticks)
+Tried aggregator 1 time.
+Reduced MIP has 3 rows, 4 columns, and 10 nonzeros.
+Reduced MIP has 0 binaries, 4 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.00 sec. (0.01 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 4 threads.
+Root relaxation solution time = 0.00 sec. (0.00 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                         1792.0000      292.0000            83.71%
+      0     0     1458.6667     2     1792.0000     1458.6667        1   18.60%
+*     0+    0                         1459.0000     1458.6667             0.02%
+      0     0        cutoff           1459.0000     1458.6667        1    0.02%
+Elapsed time = 0.01 sec. (1.02 ticks, tree = 0.01 MB, solutions = 3)
+
+Root node processing (before b&c):
+  Real time             =    0.01 sec. (1.02 ticks)
+Parallel b&c, 4 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =    0.01 sec. (1.02 ticks)
+Minimum Waste = 1459.000000 R$
+SR Amounts:
+SolA -> 334.000000 
+SolB -> 666.000000 
+SEC -> 0.000000 
+COR -> 0.000000 
+SN Amounts:
+SolA -> 84.000000 
+SolB -> 166.000000 
+SEC -> 0.000000 
+COR -> 0.000000 
