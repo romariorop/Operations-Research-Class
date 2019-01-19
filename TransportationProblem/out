@@ -1,0 +1,42 @@
+Found incumbent of value 2690.000000 after 0.00 sec. (0.00 ticks)
+Tried aggregator 1 time.
+Reduced MIP has 6 rows, 9 columns, and 18 nonzeros.
+Reduced MIP has 0 binaries, 9 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.00 sec. (0.01 ticks)
+Tried aggregator 1 time.
+Reduced MIP has 6 rows, 9 columns, and 18 nonzeros.
+Reduced MIP has 0 binaries, 9 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.00 sec. (0.01 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 4 threads.
+Root relaxation solution time = 0.00 sec. (0.01 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                         2690.0000        0.0000           100.00%
+*     0     0      integral     0     1920.0000     1920.0000        3    0.00%
+Elapsed time = 0.01 sec. (0.04 ticks, tree = 0.00 MB, solutions = 2)
+
+Root node processing (before b&c):
+  Real time             =    0.01 sec. (0.04 ticks)
+Parallel b&c, 4 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =    0.01 sec. (0.04 ticks)
+Minimum Waste  = 1920.000000 R$
+Amount from Factory 1 : 
+To Storehouse 1 : 70.000000
+To Storehouse 2 : 0.000000
+To Storehouse 3 : 50.000000
+Amount from Factory 2 : 
+To Storehouse 1 : 0.000000
+To Storehouse 2 : 70.000000
+To Storehouse 3 : 10.000000
+Amount from Factory 3 : 
+To Storehouse 1 : 80.000000
+To Storehouse 2 : 0.000000
+To Storehouse 3 : 0.000000
