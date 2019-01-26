@@ -2,5 +2,4 @@
 
 ## Linear Optmization problems using  Cplex library
 
-
-Problems images were taken by [Nelson](https://github.com/NelsonGomesNeto/)
+To compile problems : make -f MakeFile path=(pathtoproblem/code)
