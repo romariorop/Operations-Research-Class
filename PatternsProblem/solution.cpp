@@ -65,8 +65,6 @@ int main() {
     }
     patternProblem.add(y <= totalSheets);
     patternProblem.add(y <= totalCovers / 2);
-    totalCovers2 = totalCovers;
-    totalCovers2 /= 2;
     profit = y * tinprice - sheetCost * (totalSheets - y) - coverCost * (totalCovers - (y*2));
     patternProblem.add(IloMaximize(env, profit));
     
