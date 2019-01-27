@@ -20,7 +20,7 @@ int main() {
         }
     }
 
-    // variables
+    // decision variables
 
     IloArray<IloBoolVarArray> path(env, n); // path[i][j] = true if there is a path between i and j
     for(int i = 0; i < n; ++i) path[i] = IloBoolVarArray(env, n);
@@ -30,7 +30,7 @@ int main() {
         // only 1 incoming edge
     for(int i = 0; i < n; ++i){
         IloExpr totalIncoming(env);
-        model.add(path[i][i] == 0);
+        model.add(path[i][i] == 0); // there is no path between the same vertex in the answer
         for(int j = 0; j < n; ++j){
             totalIncoming+= path[j][i];
         }
