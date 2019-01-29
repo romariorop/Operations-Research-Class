@@ -28,37 +28,56 @@ int main() {
     }
 
     // decision variables
-
-    IloIntVarArray colors(env, e, 1, colorsSize); // the color of each edge
+    
+    IloArray<IloBoolVarArray> colors(env,e);
+    for(int i = 0; i < e; ++i)colors[i] = IloBoolVarArray(env, e);// color[i][j] = true if edges i have a color j
 
 
     // restrictions
 
+        // edges must have exactly one color
+        for(int i = 0; i < e; ++i){
+            IloExpr totalColors(env);
+            for(int j = 0; j < v; ++j)totalColors+= colors[i][j];
+            model.add(totalColors == 1);
+        }
+
         //adjascent vertices can not have the same color
-    for(int i = 0; i < v; ++i){
-        for(int v_ : edgesFromVertex[i]){
-            for(int _v : edgesFromVertex[i]){
-                if(v_ != _v){
-                    model.add(colors[v_] != colors[_v]);
+        for(int i = 0; i < v; ++i){
+            for(int v_ : edgesFromVertex[i]){
+                for(int _v : edgesFromVertex[i]){
+                    if(v_ != _v){
+                        for(int c = 0; c < e; ++c){
+                            model.add(colors[v_][c] + colors[_v][c] <= 1);
+                        }
+                        
+                    }
                 }
             }
         }
-    }
 
     //obj function
 
     IloExpr totalCost(env); // total cost of all edges, where color(i) costs (i), and i > 0
     for(int i = 0; i < e; ++i){
-        totalCost += colors[i];
+        for(int j = 0; j < e; ++j){
+            totalCost += colors[i][j] * (j+1);
+        }
     }
     model.add(IloMinimize(env, totalCost));
 
     // results
     cplex.solve();
     IloNumArray solutions(env, e);
-    cplex.getValues(solutions, colors);
     printf("Total Cost = %.0lf\n", cplex.getObjValue());
-    for(int i = 0; i < e; ++i)printf("vertex %d  = color %.0lf\n", i+1, solutions[i]);
+    for(int i = 0; i < e; ++i){
+        cplex.getValues(solutions, colors[i]);
+        for(int j = 0; j < e; ++j){
+            if(solutions[j]){
+                printf("vertex %d  = color %d\n", i+1, j+1);
+            }
+        }
+    }
     env.end();
     return 0;
 }
