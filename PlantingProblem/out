@@ -1,0 +1,20 @@
+Tried aggregator 1 time.
+No LP presolve or aggregator reductions.
+Presolve time = 0.00 sec. (0.00 ticks)
+
+Iteration log . . .
+Iteration:     1   Scaled dual infeas =         21599.999998
+Iteration:     4   Dual objective     =       4820000.000000
+maxProfit: 4361904.761905
+Farm 1
+	Cultivation 1: 271.428571
+	Cultivation 2: 0.000000
+	Cultivation 3: 0.000000
+Farm 2
+	Cultivation 1: 290.476190
+	Cultivation 2: 150.595238
+	Cultivation 3: 0.000000
+Farm 3
+	Cultivation 1: 0.000000
+	Cultivation 2: 237.500000
+	Cultivation 3: 0.000000
