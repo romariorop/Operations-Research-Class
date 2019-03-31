@@ -78,10 +78,15 @@ vector<int> removeNonTerminalLeafs(vector<int> original, vector<pair<int, int> >
     }
     return ans;
 }
+set<int>terminals;
+bool mycomp(pair<int,int> &a, pair<int, int> &b){
+    if(terminals.count(a.first) || terminals.count(a.second)) return true;
+    return false;
+}
 
 int main() {
     vector<pair<int, int> >edges;
-    set<int>terminals;
+    
     // v = Vertex / e == Edges // t == Terminals // l = linkers // r routers
     int v, e, t;
     int l, r;
@@ -97,6 +102,10 @@ int main() {
         scanf("%d", &temp);
         terminals.insert(temp);
     }
+    vector<pair<int, int> >edges2;
+    for(int i = 0; i < e; ++i)if(terminals.count(edges[i].first) || terminals.count(edges[i].second))edges2.push_back(edges[i]);
+    for(int i = 0; i < e; ++i)if(!terminals.count(edges[i].first) && !terminals.count(edges[i].second))edges2.push_back(edges[i]);
+    edges = edges2;
     scanf("%d %d", &l, &r);
     vector<int> valid = buildValidSubject(edges, v);
     puts("Inicial Tree: -----------------------");
