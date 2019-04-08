@@ -1,5 +1,7 @@
 {
     "files.associations": {
-        "fstream": "cpp"
+        "fstream": "cpp",
+        "vector": "cpp",
+        "xlocale": "cpp"
     }
 }
